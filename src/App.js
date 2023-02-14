@@ -1,19 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { CheckCircleFilled, EditFilled, DeleteFilled } from "@ant-design/icons";
 import { Input } from "antd";
 
 function App() {
-  const [toDo, setToDo] = useState([
-    { id: 1, title: "Task1", status: false },
-    { id: 2, title: "Task2", status: false },
-  ]);
+  const [toDo, setToDo] = useState([]);
   //for storing tasks
   const [newTask, setNewTask] = useState([]);
   //for updating tasks
   const [updateData, setUpdateData] = useState([]);
   //addtask
   const [deleteFull, setDeleteFull] = useState([]);
+
+  useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(toDo));
+  }, [toDo]);
 
   const addTask = () => {
     if (newTask) {

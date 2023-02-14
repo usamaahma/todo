@@ -5,6 +5,9 @@
 body{
   background-color: black;
   color: white;
+  width: 80%;
+  margin: auto;
+
 }
 .taskBg{
   background-color: #555;
